@@ -7,7 +7,7 @@ namespace ApiProjectCamp.WebApi.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=MAHMUTCAN;initial catalog=ApiYummyDb;integrated security=true");
+            optionsBuilder.UseSqlServer("Server=mahmutcan\\SQLEXPRESS;initial catalog=ApiYummyDb;integrated security=true");
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Cheff> Cheffs { get; set; }
