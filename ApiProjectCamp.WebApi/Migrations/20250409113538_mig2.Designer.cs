@@ -4,6 +4,7 @@ using ApiProjectCamp.WebApi.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiProjectCamp.WebApi.Migrations
 {
     [DbContext(typeof(ApiContext))]
-    partial class ApiContextModelSnapshot : ModelSnapshot
+    [Migration("20250409113538_mig2")]
+    partial class mig2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -322,11 +324,11 @@ namespace ApiProjectCamp.WebApi.Migrations
 
             modelBuilder.Entity("ApiProjectCamp.WebApi.Entities.Product", b =>
                 {
-                    b.HasOne("ApiProjectCamp.WebApi.Entities.Category", "Category")
+                    b.HasOne("ApiProjectCamp.WebApi.Entities.Category", "category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryID");
 
-                    b.Navigation("Category");
+                    b.Navigation("category");
                 });
 
             modelBuilder.Entity("ApiProjectCamp.WebApi.Entities.Category", b =>
